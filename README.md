@@ -48,3 +48,21 @@ draft = false
 - `hugo.toml` — Hugo configuration
 
 Design သည် Soft Paper `#F7F7F5`, surface `#FFFFFF`, text `#111111`, border `#E5E5E3` နှင့် Ice BLUE Aura accent ကို အခြေခံထားသည်။
+
+## Licenses and copyright
+
+This project uses separate licenses for software and written blog content:
+
+- **Code and software:** MIT License — see [`LICENSE-MIT`](./LICENSE-MIT).
+- **Original blog articles and written educational content in `content/`:**
+  Creative Commons Attribution 4.0 International (CC BY 4.0) — see
+  [`LICENSE-CONTENT.md`](./LICENSE-CONTENT.md) and the
+  [official license](https://creativecommons.org/licenses/by/4.0/).
+
+Please provide appropriate attribution when reusing CC BY 4.0 content, link to
+the license, and indicate if changes were made. These licenses do not
+automatically cover logos, trademarks, third-party fonts, libraries, images,
+or other assets; check their individual notices and licenses.
+
+Replace “CSE-MM” if it is not the actual copyright holder. This notice is
+informational and is not legal advice.

@@ -15,4 +15,4 @@ This content license does not apply to software/code, logos, trademarks,
 third-party materials, or assets unless their own license or a notice explicitly
 says otherwise. Third-party material remains subject to its own terms.
 
-Copyright (c) 2026 CSE-MM, for original blog content where applicable.
+Copyright (c) 2026 KAUNG KHANT KO KO HAN, for original blog content where applicable. Author / pen name: K4H.

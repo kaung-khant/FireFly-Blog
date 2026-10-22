@@ -1,6 +1,6 @@
-baseURL = "https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/"
+baseURL = "https://github.com/kaung-khant/FireFly-Blog"
 languageCode = "my"
-title = "IoT Embedded Systems by CSE-MM"
+title = "FireFly — IoT & Embedded Systems"
 enableRobotsTXT = true
 defaultContentLanguage = "my"
 hasCJKLanguage = true
@@ -21,6 +21,6 @@ summaryLength = 35
 
 [params]
   description = "နည်းပညာ၊ အတွေးအမြင်နှင့် လေ့လာမှတ်စုများကို မြန်မာဘာသာဖြင့် မျှဝေသည့် Blog"
-  author = "CSE-MM"
+  author = "K4H"
   tagline = "IoT · Embedded Systems · Connectivity"
   showReadingTime = true

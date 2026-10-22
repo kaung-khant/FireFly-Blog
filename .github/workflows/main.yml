@@ -1,0 +1,51 @@
+# Hugo ကို GitHub runner ပေါ်တွင် Build လုပ်ပြီး GitHub Pages သို့ Deploy လုပ်ခြင်း
+name: Build and deploy Hugo site
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Repository ကို Checkout လုပ်ခြင်း
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Hugo ကို Runner ပေါ်တွင် ပြင်ဆင်ခြင်း
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.150.0"
+          extended: true
+      - name: Hugo Website ကို Build လုပ်ခြင်း
+        run: hugo --minify
+      - name: GitHub Pages Artifact ကို Upload လုပ်ခြင်း
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: GitHub Pages သို့ Deploy လုပ်ခြင်း
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,26 @@
+baseURL = "https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/"
+languageCode = "my"
+title = "IoT Embedded Systems by CSE-MM"
+enableRobotsTXT = true
+defaultContentLanguage = "my"
+hasCJKLanguage = true
+summaryLength = 35
+
+[pagination]
+  pagerSize = 8
+
+[permalinks]
+  posts = "/posts/:slug/"
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[markup.highlight]
+  noClasses = false
+  style = "github"
+
+[params]
+  description = "နည်းပညာ၊ အတွေးအမြင်နှင့် လေ့လာမှတ်စုများကို မြန်မာဘာသာဖြင့် မျှဝေသည့် Blog"
+  author = "CSE-MM"
+  tagline = "IoT · Embedded Systems · Connectivity"
+  showReadingTime = true

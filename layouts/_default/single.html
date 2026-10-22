@@ -1,0 +1,13 @@
+{{ define "main" }}
+<article class="article">
+<header class="article-header">
+  <a class="back-link" href="{{ "posts/" | relURL }}">← ဆောင်းပါးများသို့ ပြန်ရန်</a>
+  <p class="eyebrow">{{ .Date.Format "2006-01-02" }}{{ if site.Params.showReadingTime }} · {{ .ReadingTime }} မိနစ်ခန့်{{ end }}</p>
+  <h1>{{ .Title }}</h1>
+  {{ with .Description }}<p class="article-description">{{ . }}</p>{{ end }}
+  {{ with .Params.tags }}<div class="tag-row">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+</header>
+<div class="article-content">{{ .Content }}</div>
+<footer class="article-footer"><div class="footer-rule" aria-hidden="true">+----------------------------------------+</div><p>ဒီဆောင်းပါးကို ဖတ်ရှုပေးတဲ့အတွက် ကျေးဇူးတင်ပါတယ်။</p><a class="text-link" href="{{ "posts/" | relURL }}">နောက်ထပ် ဆောင်းပါးများ ဖတ်ရန် →</a></footer>
+</article>
+{{ end }}

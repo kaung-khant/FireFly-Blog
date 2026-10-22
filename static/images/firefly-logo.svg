@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">FireFly</title>
+  <desc id="desc">A charcoal firefly with a golden glowing abdomen above the FireFly wordmark and Zigbee, Thread, Wi-Fi, and BLE labels.</desc>
+  <defs>
+    <linearGradient id="abdomen" x1="0" y1="0" x2="0.8" y2="1">
+      <stop offset="0" stop-color="#ff9f00"/>
+      <stop offset=".52" stop-color="#ffd42a"/>
+      <stop offset="1" stop-color="#ff8a00"/>
+    </linearGradient>
+    <linearGradient id="charcoal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#252b33"/>
+      <stop offset="1" stop-color="#111820"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-40%" width="220%" height="200%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+  </defs>
+
+  <!-- Firefly mark -->
+  <g transform="translate(0 8)">
+    <path d="M575 282 C561 222 529 190 487 177" fill="none" stroke="url(#charcoal)" stroke-width="17" stroke-linecap="round"/>
+    <path d="M625 282 C639 222 671 190 713 177" fill="none" stroke="url(#charcoal)" stroke-width="17" stroke-linecap="round"/>
+    <circle cx="482" cy="174" r="18" fill="url(#charcoal)"/>
+    <circle cx="718" cy="174" r="18" fill="url(#charcoal)"/>
+    <circle cx="600" cy="302" r="53" fill="url(#charcoal)"/>
+
+    <path d="M570 348 C493 320 419 339 344 380 C293 408 272 446 293 465 C306 477 331 488 355 497 C414 449 470 393 570 348Z" fill="url(#charcoal)"/>
+    <path d="M584 357 C526 390 475 435 427 488 C411 506 390 521 366 528 C405 547 451 536 480 508 C522 467 545 402 584 357Z" fill="url(#charcoal)"/>
+    <path d="M630 348 C707 320 781 339 856 380 C907 408 928 446 907 465 C894 477 869 488 845 497 C786 449 730 393 630 348Z" fill="url(#charcoal)"/>
+    <path d="M616 357 C674 390 725 435 773 488 C789 506 810 521 834 528 C795 547 749 536 720 508 C678 467 655 402 616 357Z" fill="url(#charcoal)"/>
+
+    <path d="M600 350 C572 379 548 426 535 472 Q600 494 665 472 C652 426 628 379 600 350Z" fill="#ffad00" opacity=".28" filter="url(#glow)"/>
+    <path d="M600 350 C574 379 548 426 535 472 Q600 492 665 472 C652 426 626 379 600 350Z" fill="url(#abdomen)"/>
+    <path d="M533 484 Q600 502 667 484 Q674 514 667 541 Q600 560 533 541 Q526 514 533 484Z" fill="url(#abdomen)"/>
+    <path d="M538 553 Q600 570 662 553 C650 596 628 624 600 637 C572 624 550 596 538 553Z" fill="url(#abdomen)"/>
+    <path d="M538 477 Q600 494 662 477" fill="none" stroke="#fffdf4" stroke-width="8" stroke-linecap="round"/>
+    <path d="M536 547 Q600 564 664 547" fill="none" stroke="#fffdf4" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark -->
+  <text x="600" y="846" text-anchor="middle" font-family="Inter, Avenir Next, Arial, sans-serif" font-size="218" font-weight="750" letter-spacing="-9" fill="#151b23">FireFly</text>
+  <circle cx="372" cy="670" r="22" fill="#ffbf00"/>
+
+  <!-- Connectivity legend -->
+  <g font-family="Inter, Avenir Next, Arial, sans-serif" font-size="31" fill="#20262e" text-anchor="middle">
+    <g transform="translate(190 945)">
+      <circle r="30" fill="#e52c36"/>
+      <path d="M-17 -8 H16 L-15 14 H14" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="82" y="11">Zigbee</text>
+    </g>
+    <path d="M365 913 V975" stroke="#b8bbc0" stroke-width="2"/>
+    <g transform="translate(425 945)">
+      <circle r="30" fill="#42464a"/>
+      <path d="M-10 -13 V13 M-10 -3 C-1 -16 14 -11 13 -1 C12 8 1 9 -1 1 M-10 5 C-17 5 -17 16 -8 16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/>
+      <text x="92" y="11">Thread</text>
+    </g>
+    <path d="M598 913 V975" stroke="#b8bbc0" stroke-width="2"/>
+    <g transform="translate(655 945)" stroke="#1684e8" fill="none" stroke-width="6" stroke-linecap="round">
+      <path d="M-27 -9 Q0 -34 27 -9"/>
+      <path d="M-18 2 Q0 -15 18 2"/>
+      <path d="M-8 13 Q0 5 8 13"/>
+      <circle cy="23" r="3" fill="#1684e8" stroke="none"/>
+      <text x="82" y="11" fill="#20262e" stroke="none">Wi-Fi</text>
+    </g>
+    <path d="M825 913 V975" stroke="#b8bbc0" stroke-width="2"/>
+    <g transform="translate(884 945)">
+      <rect x="-25" y="-31" width="50" height="62" rx="24" fill="#1684e8"/>
+      <path d="M-2 -20 L13 -3 L-3 8 L10 22 M-2 -20 V22 M-13 -9 L13 12" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="81" y="11">BLE</text>
+    </g>
+  </g>
+</svg>

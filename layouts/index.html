@@ -1,0 +1,61 @@
+{{ define "main" }}
+<section class="hero">
+  <p class="eyebrow"><span class="status-dot"></span> BUILD · LEARN · SHARE</p>
+  <pre class="ascii-firefly" aria-label="FireFly ASCII art logo">                 .-""-.       .-""-.
+              .-'  .--. '-. .-' .--.  '-.
+             /   .'    '.   V   .'    '.   \
+            /___/  .--.  \     /  .--.  \\___\
+          .(______/    \__\___/__/    \______).
+                   \  .-========-.  /
+                    \/  .------.  \
+                     |  /  ####  \ |
+                     | |  ######  | |
+                     |  \ #### /  |
+                      \  '----'  /
+                       '._    _. '
+                          '----'
+
+  ______ _          ______ _      _
+ |  ____(_)        |  ____| |    | |
+ | |__   _ _ __ ___| |__  | | ___| |_   _
+ |  __| | | '__/ _ \  __| | |/ _ \ | | |
+ | |    | | | |  __/ |    | |  __/ | |_| |
+ |_|    |_|_|  \___|_|    |_|\___|_|\__, |
+                                       __/ |
+                                      |___/</pre>
+  <h1>IoT Embedded Systems<br><span class="accent-text">by CSE-MM</span></h1>
+  <p class="hero-copy">Embedded systems, connected devices, and practical engineering notes — shared in Burmese and English.</p>
+  <div class="hero-actions">
+    <a class="text-link" href="{{ "posts/" | relURL }}">Explore Posts ↗</a>
+    <span class="hero-note">Zigbee · Thread · Wi-Fi · BLE</span>
+  </div>
+</section>
+<section class="section-heading">
+  <div><p class="eyebrow">./content/posts</p><h2>Latest Posts</h2></div>
+  <a class="quiet-link" href="{{ "posts/" | relURL }}">View all →</a>
+</section>
+<div class="post-list">
+  {{ $posts := where site.RegularPages "Section" "posts" }}
+  {{ $posts = where $posts "Draft" false }}
+  {{ range first 8 (sort $posts "Date" "desc") }}
+  <article class="post-row">
+    <div class="post-date">{{ .Date.Format "2006-01-02" }}</div>
+    <div class="post-body">
+      <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+      <p>{{ .Description | default .Summary | plainify | htmlUnescape | truncate 180 }}</p>
+      {{ with .Params.tags }}<div class="tag-row">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}
+    </div>
+    <a class="post-arrow" href="{{ .RelPermalink }}" aria-label="Read {{ .Title }}">↗</a>
+  </article>
+  {{ else }}<p class="empty-state">No posts yet. Add a Markdown file to <code>content/posts/</code>.</p>{{ end }}
+</div>
+<section class="terminal-note" aria-label="ထုတ်ဝေမှု workflow">
+  <div class="terminal-bar"><span></span><span></span><span></span><code>publish.sh</code></div>
+  <div class="terminal-content">
+    <p><span class="terminal-prompt">$</span> write content.md</p>
+    <p><span class="terminal-prompt">$</span> git commit -m "new post"</p>
+    <p><span class="terminal-prompt">$</span> <span class="terminal-success">GitHub Actions builds & deploys ✓</span></p>
+    <p class="terminal-comment"># No local Hugo installation needed on your phone.</p>
+  </div>
+</section>
+{{ end }}

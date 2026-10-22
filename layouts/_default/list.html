@@ -1,0 +1,14 @@
+{{ define "main" }}
+<header class="page-intro"><p class="eyebrow">./{{ .Section | default "archive" }}</p><h1>{{ .Title }}</h1>{{ with .Description }}<p class="intro-copy">{{ . }}</p>{{ end }}</header>
+<div class="post-list">
+{{ range .Paginator.Pages }}
+<article class="post-row">
+  <div class="post-date">{{ .Date.Format "2006-01-02" }}</div>
+  <div class="post-body"><h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2><p>{{ .Description | default .Summary | plainify | htmlUnescape | truncate 180 }}</p>
+  {{ with .Params.tags }}<div class="tag-row">{{ range . }}<span class="tag">{{ . }}</span>{{ end }}</div>{{ end }}</div>
+  <a class="post-arrow" href="{{ .RelPermalink }}" aria-label="{{ .Title }} ကို ဖတ်ရန်">↗</a>
+</article>
+{{ else }}<p class="empty-state">ဒီနေရာတွင် ဆောင်းပါး မရှိသေးပါ။</p>{{ end }}
+</div>
+<nav class="pagination" aria-label="စာမျက်နှာများ">{{ with .Paginator.Prev }}<a href="{{ .URL }}">← ပိုသစ်သည့်စာမျက်နှာ</a>{{ end }}{{ with .Paginator.Next }}<a href="{{ .URL }}">ပိုဟောင်းသည့်စာမျက်နှာ →</a>{{ end }}</nav>
+{{ end }}
